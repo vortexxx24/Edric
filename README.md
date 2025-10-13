@@ -1,4 +1,4 @@
-```markdown
+
 # 🤖 Edric WhatsApp Bot
 
 <div align="center">
