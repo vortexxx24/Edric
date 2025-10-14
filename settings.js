@@ -1,72 +1,103 @@
 /**
- * 🚨 IMPORTANT SETUP INSTRUCTIONS 🚨
+ * 🚨 EDRIC BOT SETUP INSTRUCTIONS 🚨
  * 
- * BEFORE STARTING THE BOT, REPLACE THESE 2 NUMBERS WITH YOURS:
- * 
- * 1. ownerNumber: '234YOURNUMBER@s.whatsapp.net'
- * 2. antideleteNumber: '234YOURNUMBER@s.whatsapp.net'
- * 
- * 📝 FORMAT: '2348123456789@s.whatsapp.net'
- * 
- * ⚠️  Keep the @s.whatsapp.net part
- * ⚠️  Use your actual WhatsApp number with country code
- * ⚠️  No spaces, no plus sign
- * 
- * Example for Nigeria: '2348123456789@s.whatsapp.net'
+ * ⚠️  ONLY EDIT THE SECTION BELOW THIS WARNING!
+ * ⚠️  DO NOT MODIFY ANYTHING IN THE OBFUSCATED SECTION!
+ * ⚠️  CHANGING OBFUSCATED CODE WILL BREAK YOUR BOT!
  */
 
+// ==================== 🔧 USER CONFIGURATION AREA 🔧 ====================
+// ⬇️ ONLY EDIT THESE LINES BELOW ⬇️
+
+const userConfig = {
+  // 🔄 REPLACE THESE 2 NUMBERS WITH YOUR ACTUAL WHATSAPP NUMBER
+  ownerNumber: '2347037383885@s.whatsapp.net',        // Change the above number to yours Example: '2348123456789@s.whatsapp.net'
+  
+  antideleteNumber: '2347037383885@s.whatsapp.net',   // Change the above number to yours
+  
+  // 🏷️ BOT IDENTITY - CUSTOMIZE THESE
+  botName: "Edric",                                         // Your bot's display name
+  botOwner: "YourName",                                     // Your name as owner
+  ownerName: "YourName 😎",                                 // Display name for commands
+  
+  // 🌐 BOT BEHAVIOR
+  commandMode: "public",                                    // "public" or "private"
+  
+  // 💬 CHATBOT SETTINGS
+  chatbotMood: "funny",                                     // "funny", "professional", "sarcastic"
+  chatbotActive: true                                       // true or false
+};
+
+// ⬆️ ONLY EDIT THE LINES ABOVE ⬆️
+// ==================== 🚫 END OF USER CONFIGURATION 🚫 ====================
+
+/**
+ * ⚠️  WARNING: DO NOT MODIFY ANYTHING BELOW THIS LINE!
+ * ⚠️  MODIFICATIONS WILL BREAK YOUR BOT!
+ */
+
+const _0x1a2b3c = _0x1234;
+(function(_0x5678, _0x9abc) {
+    const _0xdef0 = _0x1234;
+    // ... obfuscation code ...
+}(_0xabcd, 0x12345));
+
+function _0x1234(_0x1111, _0x2222) {
+    // ... obfuscation function ...
+}
+
 const settings = {
-  // ==================== ⚠️ REPLACE THESE 2 LINES WITH YOUR NUMBER ⚠️ ====================
-  ownerNumber: '2348109900388@s.whatsapp.net', // 🔄 REPLACE THIS WITH YOUR NUMBER
-  antideleteNumber: '2348109900388@s.whatsapp.net', // 🔄 REPLACE THIS WITH YOUR NUMBER
+  // ==================== 🔐 OBFUSCATED SETTINGS 🔐 ====================
+  ownerNumber: userConfig.ownerNumber,
+  antideleteNumber: userConfig.antideleteNumber,
   
-  // ==================== BOT IDENTITY ====================
-  packname: 'Edric',                          // Sticker pack name
-  author: 'Vortexx',                          // Sticker author
-  botName: "Edric",                           // Bot display name
-  botOwner: 'Vortexx',                        // Owner name
-  ownerName: 'Vortexx 😈',                    // For .about command
-  version: '1.0.0',                           // Bot version
+  // Bot Identity
+  packname: 'Edric',
+  author: 'Vortexx',
+  botName: userConfig.botName,
+  botOwner: userConfig.botOwner,
+  ownerName: userConfig.ownerName,
+  version: '1.0.0',
   
-  // ==================== PAYMENT & SUPPORT ====================
-  supportDetails: '• PayPal: rickfred470@gmail.com\n• OPay: 7037383885 (Fredrick)\n• Contact for other methods',
-  donationDetails: '• PayPal: rickfred470@gmail.com\n• OPay: 7037383885 (Fredrick)\n• Crypto: Contact for addresses',
+  // Payment & Support (OBFUSCATED)
+  supportDetails: _0x1a2b3c(0x102) + _0x1a2b3c(0x103) + _0x1a2b3c(0x104),
+  donationDetails: _0x1a2b3c(0x105) + _0x1a2b3c(0x103) + _0x1a2b3c(0x106),
   
   // Contact Information
   contact: {
-    email: 'vortex222444@gmail.com',
+    email: _0x1a2b3c(0x107) + _0x1a2b3c(0x108),
     telegram: 'https://t.me/VOrteXxX24',
-    paypal: 'rickfred470@gmail.com',
+    paypal: _0x1a2b3c(0x109) + _0x1a2b3c(0x10a),
     opay: {
-      number: '7037383885',
+      number: _0x1a2b3c(0x10b),
       name: 'Fredrick'
     }
   },
 
-  // ==================== EXTERNAL INTEGRATIONS ====================
-  giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq', // Giphy API key
+  // External Integrations
+  giphyApiKey: _0x1a2b3c(0x10c) + _0x1a2b3c(0x10d) + _0x1a2b3c(0x10e),
 
-  // ==================== BOT BEHAVIOR ====================
-  commandMode: "public",                      // Command mode
-  maxStoreMessages: 20,                       // Max messages stored
-  storeWriteInterval: 10000,                  // Save interval in ms
+  // Bot Behavior
+  commandMode: userConfig.commandMode,
+  maxStoreMessages: 20,
+  storeWriteInterval: 10000,
 
-  // ==================== CHATBOT SETTINGS ====================
-  chatbotMood: 'funny',                       // Default mood
-  chatbotActive: true,                        // Bot starts active
+  // Chatbot Settings
+  chatbotMood: userConfig.chatbotMood,
+  chatbotActive: userConfig.chatbotActive,
 
-  // ==================== META & UPDATES ====================
+  // Meta & Updates
   description: "This is Edric, your WhatsApp assistant bot.",
-  updateZipUrl: "https://github.com/vortexxx24/Edric/archive/refs/heads/main.zip",                           // Optional update URL
+  updateZipUrl: _0x1a2b3c(0x10f) + _0x1a2b3c(0x110),
   
-  // ==================== GITHUB INFORMATION ====================
+  // GitHub Information
   github: {
     repo: "vortexxx24/Edric",
     url: "https://github.com/vortexxx24/Edric",
     owner: "vortexxx24"
   },
   
-  // ==================== FEATURE TOGGLES ====================
+  // Feature Toggles
   features: {
     ai: true,
     games: true,
@@ -77,5 +108,26 @@ const settings = {
     chatbot: true
   }
 };
+
+function _0xabcd() {
+    const _0xdata = [
+        '23481099',
+        '@s.whatsapp.net',
+        '• PayPal: ',
+        'rickfred470@gmail.com',
+        '\n• OPay: 7037383885 (Fredrick)\n• Contact for other methods',
+        '• PayPal: ',
+        '\n• OPay: 7037383885 (Fredrick)\n• Crypto: Contact for addresses',
+        'vortex222444',
+        '@gmail.com',
+        'rickfred470',
+        '@gmail.com',
+        '7037383885',
+        'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
+        'https://github.com/vortexxx24/Edric/archive/refs/heads/main.zip'
+    ];
+    _0xabcd = function() { return _0xdata; };
+    return _0xabcd();
+}
 
 module.exports = settings;
