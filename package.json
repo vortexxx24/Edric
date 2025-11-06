@@ -1,5 +1,5 @@
 {
-  "name": "Edric",
+  "name": "edric",
   "version": "1.0.0",
   "description": "Edric - Advanced WhatsApp Bot with AI Features",
   "main": "index.js",
@@ -29,19 +29,7 @@
     "fix:obfuscated": "node -e \"const fs=require('fs');['./index.js','./main.js','./cleanup.js','./reset-session.js'].forEach(f=>{if(fs.existsSync(f)){let c=fs.readFileSync(f,'utf8');if(!c.includes('module.exports')&&!c.includes('module[\\'exports\\']')){c+='\\nif(typeof module!==\\'undefined\\'&&module&&module.exports){module.exports=typeof _0x!==\\'undefined\\'?_0x:{};}';fs.writeFileSync(f,c);console.log('Fixed:'+f)}}});console.log('✅ Obfuscation fixes applied!')\"",
     "test:obfuscated": "node -e \"console.log('🧪 Testing obfuscated bot...');try{require('./index.js');console.log('✅ Bot loads successfully!')}catch(e){console.log('❌ Error:',e.message)}\"",
     "obfuscate": "javascript-obfuscator ./lib --output ./lib-obf --compact true --control-flow-flattening true",
-    "obfuscate:safe": "javascript-obfuscator . --output ./obfuscated --compact true --control-flow-flattening true --disable-console-output false --string-array-encoding base64 --exclude 'node_modules, package.json, package-lock.json, *.json, *.md, *.txt, *.log, session, media, data'",
-    
-    "fix:all-commands-spacing": "node -e \"const fs=require('fs');const path=require('path');function fixSpacing(content){content=content.replace(/[ ]{2,}/g,' ');content=content.replace(/┃\\\\s{2,}/g,'┃ ');content=content.replace(/\\\\s{2,}┃/g,' ┃');content=content.replace(/╭━+┫\\\\s*[^┃]*\\\\s*┣━+╮/g,match=>match.replace(/\\\\s+/g,' ').replace(/┫\\\\s/,'┫ ').replace(/\\\\s┣/,' ┣'));content=content.replace(/┃\\\\s*([^┃:]+):\\\\s*([^┃]*)\\\\s*┃/g,'┃ $1: $2 ┃');content=content.replace(/╰━+╯/g,'╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯');content=content.replace(/🌙\\\\s+/g,'🌙 ');content=content.replace(/🚀\\\\s+/g,'🚀 ');content=content.replace(/📶\\\\s+/g,'📶 ');content=content.replace(/⏱\\\\s+/g,'⏱ ');return content;}const commandsDir='./commands';if(fs.existsSync(commandsDir)){const files=fs.readdirSync(commandsDir).filter(f=>f.endsWith('.js'));files.forEach(file=>{const filePath=path.join(commandsDir,file);let content=fs.readFileSync(filePath,'utf8');content=fixSpacing(content);fs.writeFileSync(filePath,content);console.log('✅ Fixed:',file);});}['./index.js','./main.js','./config.js','./cleanup.js','./reset-session.js'].forEach(file=>{if(fs.existsSync(file)){let content=fs.readFileSync(file,'utf8');content=fixSpacing(content);fs.writeFileSync(file,content);console.log('✅ Fixed:',file);}});console.log('🎉 All command spacing fixed!');\"",
-    
-    "fix:spacing-nuclear": "node -e \"const fs=require('fs');const path=require('path');function normalizeBanner(content){const bannerTop='╭━━━┫ 🔥 EDRIC SYSTEM PULSE 🔥 ┣━━━╮';const bannerBottom='╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯';content=content.replace(/╭[━┫\\\\s🔥EDRICSYSTEMPULSE┣╮]+╮/g,bannerTop);content=content.replace(/╰[━╯\\\\s]+╯/g,bannerBottom);content=content.replace(/┃\\\\s*([^┃]{0,20}):\\\\s*([^┃]{0,30})\\\\s*┃/g,(match,label,value)=>{const paddedLabel=(label+':').padEnd(15,' ');return\\`┃ \\${paddedLabel} \\${value.trim()} ┃\\`;});return content;}function processFiles(dir){const files=fs.readdirSync(dir).filter(f=>f.endsWith('.js'));files.forEach(file=>{const filePath=path.join(dir,file);let content=fs.readFileSync(filePath,'utf8');content=normalizeBanner(content);fs.writeFileSync(filePath,content);console.log('🔧 Fixed:',file);});}if(fs.existsSync('./commands'))processFiles('./commands');['./index.js','./main.js','./config.js'].forEach(file=>{if(fs.existsSync(file)){let content=fs.readFileSync(file,'utf8');content=normalizeBanner(content);fs.writeFileSync(file,content);console.log('🔧 Fixed:',file);}});console.log('💥 Nuclear spacing fix complete!');\"",
-    
-    "find:spacing-issues": "node -e \"const fs=require('fs');const path=require('path');function checkSpacing(filePath){const content=fs.readFileSync(filePath,'utf8');if(content.includes('┃')&&content.match(/[ ]{3,}/)){console.log('🔴 Spacing issues in:',filePath);return true;}return false;}let foundIssues=false;if(fs.existsSync('./commands')){const files=fs.readdirSync('./commands').filter(f=>f.endsWith('.js'));files.forEach(file=>{if(checkSpacing(path.join('./commands',file)))foundIssues=true;});}['./index.js','./main.js','./config.js'].forEach(file=>{if(fs.existsSync(file)&&checkSpacing(file))foundIssues=true;});if(!foundIssues)console.log('✅ No spacing issues found!');\"",
-
-    "fix:response-spacing": "node -e \"const fs=require('fs');const path=require('path');function fixResponseStrings(content){content=content.replace(/('|\\\")(╭[^']*╮)('|\\\")/g,'$1╭━━━┫ 🔥 EDRIC SYSTEM PULSE 🔥 ┣━━━╮$3');content=content.replace(/('|\\\")(╰[^']*╯)('|\\\")/g,'$1╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯$3');content=content.replace(/('|\\\")(┃[^']*┃)('|\\\")/g,(match,quote,line)=>{line=line.replace(/┃\\\\s+/g,'┃ ').replace(/\\\\s+┃/g,' ┃');line=line.replace(/:\\\\s+/g,': ').replace(/\\\\s{2,}/g,' ');return quote+line+quote;});return content;}const commandsDir='./commands';if(fs.existsSync(commandsDir)){const files=fs.readdirSync(commandsDir).filter(f=>f.endsWith('.js'));files.forEach(file=>{const filePath=path.join(commandsDir,file);let content=fs.readFileSync(filePath,'utf8');content=fixResponseStrings(content);content=content.replace(/(sendMessage|sendText|reply)\\\\([^)]*('|\\\")[^']*╭[^']*╮[^']*('|\\\"))/g,(match)=>{return match.replace(/╭[^╮]*╮/g,'╭━━━┫ 🔥 EDRIC SYSTEM PULSE 🔥 ┣━━━╮').replace(/╰[^╯]*╯/g,'╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯').replace(/┃\\\\s*/g,'┃ ').replace(/\\\\s*┃/g,' ┃');});fs.writeFileSync(filePath,content);console.log('✅ Fixed response spacing in:',file);});}console.log('🎉 WhatsApp response spacing fixed!');\"",
-
-    "rebuild:responses": "node -e \"const fs=require('fs');const path=require('path');const templates={bannerTop:'╭━━━┫ 🔥 EDRIC SYSTEM PULSE 🔥 ┣━━━╮',bannerBottom:'╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯',row:(label,value)=>\\`┃ \\${(label+':').padEnd(15,' ')} \\${value} ┃\\`};function rebuildResponses(content){content=content.replace(/['\\\"][^'\\\"]*╭[^'\\\"]*╮[^'\\\"]*['\\\"]/g,\\`'\\${templates.bannerTop}'\\`);content=content.replace(/['\\\"][^'\\\"]*╰[^'\\\"]*╯[^'\\\"]*['\\\"]/g,\\`'\\${templates.bannerBottom}'\\`);content=content.replace(/['\\\"][^'\\\"]*┃[^'\\\"]*:[^'\\\"]*┃[^'\\\"]*['\\\"]/g,(match)=>{const parts=match.match(/┃\\\\s*([^:]*):\\\\s*([^┃]*)\\\\s*┃/);if(parts&&parts.length>=3){return \\`'\\${templates.row(parts[1].trim(),parts[2].trim())}'\\`;}return match;});return content;}const commandsDir='./commands';if(fs.existsSync(commandsDir)){const files=fs.readdirSync(commandsDir).filter(f=>f.endsWith('.js'));files.forEach(file=>{const filePath=path.join(commandsDir,file);let content=fs.readFileSync(filePath,'utf8');content=rebuildResponses(content);fs.writeFileSync(filePath,content);console.log('🔧 Rebuilt responses in:',file);});}console.log('🚀 All WhatsApp responses rebuilt!');\"",
-
-    "fix:everything": "npm run fix:all-commands-spacing && npm run fix:response-spacing && npm run rebuild:responses && npm run fix:obfuscated"
+    "obfuscate:safe": "javascript-obfuscator . --output ./obfuscated --compact true --control-flow-flattening true --disable-console-output false --string-array-encoding base64 --exclude 'node_modules, package.json, package-lock.json, *.json, *.md, *.txt, *.log, session, media, data'"
   },
   "keywords": [
     "whatsapp-bot",
@@ -65,13 +53,16 @@
     "@ffmpeg/ffmpeg": "^0.12.15",
     "@hapi/boom": "^10.0.1",
     "@types/node": "^18.0.6",
-    "@whiskeysockets/baileys": "^6.7.18",
+    "@whiskeysockets/baileys": "^v7.0.0-rc.3",
     "awesome-phonenumber": "^5.9.0",
     "axios": "^1.8.4",
+    "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.12",
     "cookie": "^0.5.0",
+    "discord.js": "^14.11.0",
     "dotenv": "^16.4.5",
     "events": "^3.3.0",
+    "ffmpeg-static": "^5.2.0",
     "file-type": "^16.5.4",
     "fluent-ffmpeg": "^2.1.3",
     "form-data": "^4.0.1",
@@ -90,6 +81,7 @@
     "node-id3": "^0.2.3",
     "node-webpmux": "^3.1.0",
     "node-youtube-music": "^0.8.3",
+    "ora": "^6.3.1",
     "performance-now": "^2.1.0",
     "phin": "^3.7.1",
     "pino": "^8.21.0",
@@ -101,24 +93,20 @@
     "safe-stable-stringify": "^2.5.0",
     "set-cookie": "^0.0.4",
     "sharp": "^0.32.6",
+    "systeminformation": "^5.12.0",
     "tough-cookie": "^5.0.0",
     "translate-google-api": "^1.0.4",
     "ws": "^8.17.1",
+    "xml2js": "^0.6.2",
     "yargs": "^17.6.0",
     "yargs-parser": "^21.1.1",
     "youtube-yts": "^2.0.0",
     "youtubedl-core": "^4.11.7",
     "yt-search": "^2.12.1",
-    "ytdl-core": "^4.11.5",
-    "discord.js": "^14.11.0",
-    "ffmpeg-static": "^5.2.0",
-    "systeminformation": "^5.12.0",
-    "chalk": "^4.1.2",
-    "ora": "^6.3.1",
-    "xml2js": "^0.6.2",
-    "chalk-animation": "^1.0.0"
+    "ytdl-core": "^4.11.5"
   },
   "devDependencies": {
+    "chalk-animation": "^1.0.0",
     "javascript-obfuscator": "^4.1.1"
   },
   "overrides": {
@@ -132,4 +120,4 @@
     "darwin",
     "win32"
   ]
-  }
+}
